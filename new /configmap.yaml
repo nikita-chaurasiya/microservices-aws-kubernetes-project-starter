@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: postgresql-service
+  name: coworking
 data:
-  DB_NAME: 
-  DB_USER: <ENTER YOUR USER NAME HERE>
-  DB_HOST: 10.100.183.215
+  DB_NAME: mydatabase
+  DB_USER: myuser
+  DB_HOST: postgresql
   DB_PORT: 5432
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: <NAME OF THE Secret>
+  name: coworking-sec
 type: Opaque
 data:
   <THE KEY FROM Secret WHICH has THE ENCODED PASSWORD>: <OUTPUT OF `echo -n 'the password' | base64`>
