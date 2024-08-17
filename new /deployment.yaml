@@ -51,7 +51,7 @@ spec:
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: <NAME OF THE Secret>
+              name: coworking-sec
               key: <THE KEY FROM Secret WHICH has THE ENCODED PASSWORD>
       restartPolicy: Always
       
