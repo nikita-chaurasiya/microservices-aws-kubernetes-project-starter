@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: coworking
+  name: coworking-config
 data:
   DB_NAME: mydatabase
   DB_USER: myuser
