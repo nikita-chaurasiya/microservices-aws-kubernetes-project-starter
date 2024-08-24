@@ -48,6 +48,26 @@ spec:
         - configMapRef:
             name: <NAME OF THE CONFIG MAP>
         env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: <service-name>-postgresql
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: <service-name>-postgresql
+              key: DB_PORT
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: <service-name>-postgresql
+              key: DB_NAME
+        - name: DB_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: <service-name>-postgresql
+              key: DB_USERNAME
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
