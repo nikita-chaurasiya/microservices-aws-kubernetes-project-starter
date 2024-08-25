@@ -46,32 +46,11 @@ spec:
           timeoutSeconds: 5
         envFrom:
         - configMapRef:
-            name: coworking-config
+            name: <NAME OF THE ConfigMap>
         env:
-        - name: DB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: coworking-config
-              key: DB_HOST
-        - name: DB_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: coworking-config
-              key: DB_PORT
-        - name: DB_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: coworking-config
-              key: DB_NAME
-        - name: DB_USERNAME
-          valueFrom:
-            configMapKeyRef:
-              name: <service-name>-postgresql
-              key: DB_USERNAME
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: coworking-sec
+              name: <NAME OF THE Secret>
               key: <THE KEY FROM Secret WHICH has THE ENCODED PASSWORD>
       restartPolicy: Always
-      
