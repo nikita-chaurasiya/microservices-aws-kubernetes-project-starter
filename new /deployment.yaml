@@ -48,6 +48,26 @@ spec:
         - configMapRef:
             name: postgresql-service-cfgmp
         env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: demo-config
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: demo-config
+              key: DB_PORT
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: demo-config
+              key: DB_NAME
+        - name: DB_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: demo-config
+              key: DB_USERNAME
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
