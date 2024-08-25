@@ -51,22 +51,22 @@ spec:
         - name: DB_HOST
           valueFrom:
             configMapKeyRef:
-              name: demo-config
+              name: postgresql-service-cfgmp
               key: DB_HOST
         - name: DB_PORT
           valueFrom:
             configMapKeyRef:
-              name: demo-config
+              name: postgresql-service-cfgmp
               key: DB_PORT
         - name: DB_NAME
           valueFrom:
             configMapKeyRef:
-              name: demo-config
+              name: postgresql-service-cfgmp
               key: DB_NAME
         - name: DB_USERNAME
           valueFrom:
             configMapKeyRef:
-              name: demo-config
+              name: postgresql-service-cfgmp
               key: DB_USERNAME
         - name: DB_PASSWORD
           valueFrom:
