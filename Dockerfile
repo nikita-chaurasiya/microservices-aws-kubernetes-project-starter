@@ -24,4 +24,4 @@ COPY ./analytics/app.py app.py
 
 COPY ./analytics/config.py config.py
 
-CMD python app.py
+CMD ["python3", "./app.py"]
