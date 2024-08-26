@@ -1,18 +1,17 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: pg-config
+  name: config
 data:
-  DB_NAME: "mydatabase"
-  DB_USER: "myuser"
-  DB_HOST: "10.100.181.20"
+  DB_USERNAME: myuser
+  DB_NAME: mydatabase
+  DB_HOST: "10.100.35.57"
   DB_PORT: "5432"
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: postgresql-db-sec
+  name: db-secret
 type: Opaque
 data:
-  DB_PASSWORD: "dGhlIHBhc3N3b3Jk"
-
+  DB_PASSWORD: "bXlwYXNzd29yZA=="

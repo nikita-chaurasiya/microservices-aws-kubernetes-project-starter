@@ -37,20 +37,20 @@ spec:
             path: /health_check
             port: 5153
           initialDelaySeconds: 5
-          timeoutSeconds: 2
+          timeoutSeconds: 30
         readinessProbe:
           httpGet:
             path: "/readiness_check"
             port: 5153
           initialDelaySeconds: 5
-          timeoutSeconds: 5
+          timeoutSeconds: 30
         envFrom:
         - configMapRef:
-            name: pg-config
+            name: config
         env:
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: postgresql-db-sec
+              name: db-secret
               key: DB_PASSWORD
       restartPolicy: Always
