@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: 737418620655.dkr.ecr.us-east-1.amazonaws.com/cowowking-checkin:7
+        image: 737418620655.dkr.ecr.us-east-1.amazonaws.com/cowowking-checkin:10
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -46,28 +46,8 @@ spec:
           timeoutSeconds: 5
         envFrom:
         - configMapRef:
-            name: postgresql-service-cfgmp
+            name: demo-config
         env:
-        - name: DB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: postgresql-service-cfgmp
-              key: DB_HOST
-        - name: DB_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: postgresql-service-cfgmp
-              key: DB_PORT
-        - name: DB_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: postgresql-service-cfgmp
-              key: DB_NAME
-        - name: DB_USERNAME
-          valueFrom:
-            configMapKeyRef:
-              name: postgresql-service-cfgmp
-              key: DB_USERNAME
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
