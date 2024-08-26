@@ -14,5 +14,5 @@ metadata:
   name: postgresql-db-sec
 type: Opaque
 data:
-  DB_PASSWORD: dGhlIHBhc3N3b3Jk
+  DB_PASSWORD: "dGhlIHBhc3N3b3Jk"
 
